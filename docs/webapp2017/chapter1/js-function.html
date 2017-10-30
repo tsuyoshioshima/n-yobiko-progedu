@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>生まれてから何秒？</title>
+</head>
+<body>
+    <p id="birth-time"></p>
+    参考元：<a href="https://www.nnn.ed.nico/lessons/482526831">N予備校｜【2017年度】プログラミング入門 Webアプリ｜010.JavaScript の関数</a>     
+<script>
+(function(){
+    "use strict";
+    var myBirthTime = new Date(1971, 9, 26, 12, 0);
+    function updateParagraph() {
+        var now = new Date();
+        var seconds = (now.getTime() - myBirthTime.getTime()) / 1000;
+        document.getElementById('birth-time').innerHTML = '生まれてから' + Math.floor(seconds) + '秒経過。';
+    }
+    setInterval(updateParagraph,1000);
+})();
+</script>    
+</body>
+</html>

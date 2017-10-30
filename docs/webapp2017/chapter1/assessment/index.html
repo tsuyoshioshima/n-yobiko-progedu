@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>あなたのいいところ診断</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>あなたのいいところは？</h1>
+    <p>診断したい名前を入れて下さい。</p>
+    <input type="text" id="user-name" size="40" maxlength="20" placeholder="調べたい人の名前">
+    <button id="assessment">診断する</button>
+    <div id="result-area"></div>
+    <div id="tweet-area">
+        <script>
+            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');
+        </script>
+    </div>
+    <p>※参考元：<a href="https://www.nnn.ed.nico/courses/170/chapters/2235">Ｎ予備校｜【2017年度】プログラミング入門 Webアプリ｜第1章 はじめよう</a></p>
+    <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=rocketinc-22&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=B06Y5R95DQ&linkId=50227d208796173209e262b8b4977c1c"></iframe>
+    <script src="main.js"></script>
+</body>
+
+</html>

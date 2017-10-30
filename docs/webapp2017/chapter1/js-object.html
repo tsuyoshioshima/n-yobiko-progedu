@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>時間当てゲーム</title>
+</head>
+<body>
+    <h1 id="display-area"></h1>
+    <p>参考元：<a href="https://www.nnn.ed.nico/lessons/482526832">N予備校｜【2017年度】プログラミング入門 Webアプリ｜JavaScriptのオブジェクト</a></p>
+    <script>
+        (function(){
+            "use strict";
+            // ゲームに関する事柄は全て game オブジェクトに格納する
+            var game = {
+                startTime: null,
+                displayArea: document.getElementById('display-area'),
+                start: function() {
+                    game.startTime = new Date().getTime();
+                    //3) 何かキーを押すと時間当てゲームが停止する
+                    document.body.onkeypress = game.stop;
+                },
+                stop: function() {
+                    var currentTime = new Date().getTime();
+                    var seconds = (currentTime - game.startTime) / 1000;
+                    //4) 9.5秒から10.5秒の間なら「すごい」、そうでないなら「残念」と表示する
+                    if (9.5 <= seconds && seconds <= 10.5) {
+                        game.displayArea.innerText = seconds + '秒でした。すごい！';
+                    } else {
+                        game.displayArea.innerText = seconds + '秒でした。残念！';
+                    }
+                }
+            };
+
+            //1) 10秒だと思ったら何かキーを押して下さいというダイアログを表示する
+            if (confirm("10秒だと思ったら何かキーを押して下さい")){
+                //2) ダイアログでOKを押すと、時間当てゲームがスタートする
+                game.start();
+            }
+        })();
+    </script>
+</body>
+</html>

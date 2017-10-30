@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CSSを使ったプログラミング</title>
+    <style>
+        .face {
+            color: red;
+        }
+        .back {
+            color: red;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+<h1 id="header" class="face">CSSを使ったプログラミング</h1>
+<p>参考先：<a href="https://www.nnn.ed.nico/lessons/482526877">N予備校｜プログラミング入門コース｜CSS を使ったプログラミング</a></p>
+<script>
+(function(){
+    "use strict";
+    var header = document.getElementById('header');
+    var deg = 0; // 回転角度の初期化
+
+    // header を回転させる
+    function rotateHeader() {
+        deg = deg + 6;  // 6度ずつ回転
+        deg = deg % 360 // 360度を超えた時の処理
+
+        // 0度以上90度未満　または　270度以上360度未満　の場合は .face（表）
+        if ( ( 0 <= deg && deg < 90 ) || ( 270 <= deg && deg < 360 ) ) {
+            header.className = 'face';
+        } else {
+        // それ以外は .back（裏）
+            header.className = 'back';    
+        }
+
+        header.style.transform = 'rotateX(' + deg + 'deg)';
+    }
+    // 20ミリ秒ごとに実行
+    setInterval( rotateHeader, 20 );
+
+})();
+</script>
+</body>
+</html>
